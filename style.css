@@ -19,6 +19,12 @@ ul {
     list-style-type: none;
 }
 
+/* Regla para imágenes responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .resume-container {
     display: flex;
     max-width: 1000px;
@@ -58,6 +64,7 @@ ul {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 1px;
+    line-height: 1.2;
 }
 
 .header-info h2 {
@@ -82,6 +89,7 @@ ul {
     font-size: 0.9em;
     display: flex;
     align-items: center;
+    word-break: break-all; /* Para evitar desbordamiento de enlaces largos */
 }
 
 .contact-info i {
@@ -168,6 +176,7 @@ ul {
 .job-info {
     width: 30%;
     color: #666;
+    padding-right: 20px;
 }
 
 .job-info h5 {
@@ -200,16 +209,81 @@ ul {
 .interests-section .interest-items {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    gap: 20px; /* Espacio entre los elementos */
     margin-top: 30px;
 }
 
 .interests-section .item {
     text-align: center;
     font-size: 0.9em;
+    flex-basis: 120px; /* Ancho base para cada elemento */
 }
 
 .interests-section i {
     font-size: 2.2em;
     color: #02aab0;
     margin-bottom: 10px;
+}
+
+
+/* --- Media Queries para Responsividad --- */
+
+/* Para tablets y dispositivos móviles (hasta 768px) */
+@media (max-width: 768px) {
+    .resume-container {
+        flex-direction: column; /* Apila las columnas verticalmente */
+        margin: 20px;
+        width: auto;
+    }
+
+    .left-column, .right-column {
+        width: 100%; /* Las columnas ocupan todo el ancho */
+        padding: 25px;
+    }
+
+    .experience-section ul li {
+        flex-direction: column; /* Apila la información de la experiencia */
+    }
+
+    .job-info, .job-details {
+        width: 100%; /* Ocupan todo el ancho */
+    }
+    
+    .job-info {
+        margin-bottom: 10px; /* Espacio entre la fecha y la descripción */
+        padding-right: 0;
+    }
+
+    .header-info h1 {
+        font-size: 1.8em;
+    }
+}
+
+/* Para móviles pequeños (hasta 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Reduce el tamaño base de la fuente */
+    }
+
+    .header-info h1 {
+        font-size: 1.6em; /* Reduce aún más el tamaño del título principal */
+    }
+
+    .header-info h2 {
+        font-size: 1.1em;
+    }
+    
+    .right-column h2 {
+        font-size: 1.4em;
+    }
+
+    .left-column, .right-column {
+        padding: 20px;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
 }
