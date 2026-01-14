@@ -22,7 +22,7 @@ ul {
 /* Regla para imágenes responsivas */
 img {
     max-width: 200%;
-    height: auto;
+    height: 100%;
 }
 
 .resume-container {
